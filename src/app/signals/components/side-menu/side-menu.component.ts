@@ -11,7 +11,20 @@ interface MenuItem {
   styleUrl: './side-menu.component.css',
 })
 export class SideMenuComponent {
-  public menuItems = signal();
+  public menuItems = signal<MenuItem[]>([
+    {
+      title: 'Contador',
+      route: 'counter',
+    },
+    {
+      title: 'Usuario',
+      route: 'user-info',
+    },
+    {
+      title: 'Mutaciones',
+      route: 'properties',
+    },
+  ]);
 
   /* public menuItems: MenuItem[] = [
     {
